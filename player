@@ -33,4 +33,46 @@ public class Player {
         System.out.println("Type of player: "+ getPlayerType());
         System.out.println("No. of Wickets scored: "+ getWickets());
         System.out.println("No. of runs: "+ getRuns());
+        
+       //getters and setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setPlayer_type(String playerType) {
+        this.playerType = playerType;
+    }
+
+    public String getPlayerType() {
+        return playerType;
+    }
+
+    public void setRuns(int runs) {
+        this.runs = runs;
+    }
+
+    public int getRuns() {
+        return runs;
+    }
+
+    public void setWickets(int wickets) {
+        this.wickets = wickets;
+    }
+
+    public int getWickets() {
+        return wickets;
+    }
+}
     }
