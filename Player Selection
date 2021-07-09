@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class PlayerSelection {
+    private ArrayList<Player> players = new ArrayList<Player>();
+    private Scanner scan = new Scanner(System.in);
+
+    private void menuOptions(){
+        String option;
+        while(true){
+            System.out.println("------------------Menu------------------");
+            System.out.println("Enter 'A' to add a Player\nEnter 'V' to View all Player");
+            System.out.print("Select your Option: ");
+            option = scan.nextLine();
+            switch (option.toUpperCase()){
+                case "A":
+                    addPlayer();
+                    break;
+
+                case "V":
+                    viewPlayers();
+                    break;
+
+                default:
+                    System.out.println("Error : Invalid input");
+            }
+        }
+    }
+
+    public void addPlayer(){
+        System.out.println("Enter player name: ");
+        String name = scan.nextLine();
+        System.out.println("Enter player Age: ");
+        int age = Integer.parseInt(scan.nextLine());
+        System.out.println("Enter player type: ");
+        String type = scan.nextLine();
+        System.out.println("Enter player runs: ");
+        int runs = Integer.parseInt(scan.nextLine());
+        System.out.println("Enter player wickets: ");
+        int wickets = Integer.parseInt(scan.nextLine());
+
+        Player player = new Player(name,age,type,runs,wickets);
+        players.add(player);
+        System.out.println("player added");
+    }
+
+    public void viewPlayers(){
+        System.out.println(players);
+    }
+
+    private void bestBatsman(){
+        String nameIterate = players.get(0).getName();
+        int runsIterate = players.get(0).getRuns();
+        for (int i=0; i< players.size(); i++) {
+            if (runsIterate < players.get(i).getRuns()) {
+                nameIterate = players.get(i).getName();
+                runsIterate = players.get(i).getRuns();
+            }
+        }
+        System.out.println(nameIterate + " is the best batsman with " + runsIterate + "runs");
+    }
+
+    private void bestBowler(){
+        String nameIterate = players.get(0).getName();
+        int wicketsIterate = players.get(0).getWickets();
+        for (int i=0; i< players.size(); i++) {
+            if (wicketsIterate < players.get(i).getWickets()) {
+                nameIterate = players.get(i).getName();
+                wicketsIterate = players.get(i).getWickets();
+            }
+        }
+        System.out.println(nameIterate + " is the best bowler with " + wicketsIterate + "wickets");
+    }
+
+}
