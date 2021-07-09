@@ -11,7 +11,7 @@ public class PlayerSelection {
         while(true){
             System.out.println("------------------Menu------------------");
             System.out.println("Enter 'A' to add a Player\nEnter 'V' to View all Player");
-            System.out.print("Select your Option: ");
+            System.out.print("Select your option: ");
             option = scan.nextLine();
             switch (option.toUpperCase()){
                 case "A":
