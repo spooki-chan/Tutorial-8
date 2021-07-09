@@ -11,7 +11,7 @@ public class PlayerSelection {
         while(true){
             System.out.println("------------------Menu------------------");
             System.out.println("Enter 'A' to add a Player\nEnter 'V' to View all Player");
-            System.out.print("Select your option: ");
+            System.out.print("Select your Option: ");
             option = scan.nextLine();
             switch (option.toUpperCase()){
                 case "A":
@@ -58,7 +58,7 @@ public class PlayerSelection {
                 runsIterate = players.get(i).getRuns();
             }
         }
-        System.out.println(nameIterate + " is the best batsman with " + runsIterate + "runs");
+        System.out.println("With "+ runsIterate + "runs " + nameIterate + " is the best batsman");
     }
 
     private void bestBowler(){
@@ -70,7 +70,7 @@ public class PlayerSelection {
                 wicketsIterate = players.get(i).getWickets();
             }
         }
-        System.out.println(nameIterate + " is the best bowler with " + wicketsIterate + "wickets");
+        System.out.println("With "+ wicketsIterate + "wickets " + nameIterate + " is the best bowler");
     }
 
 }
